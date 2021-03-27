@@ -13,9 +13,9 @@ import java.io.IOException;
 import java.net.URL;
 
 @SuppressWarnings("unused")
-@RootnetAddon(name = "ImpostorESP", author = "ADifferentPerson", version = "1.1.1")
+@RootnetAddon(name = "ImpostorESP", author = "ADifferentPerson", version = "1.0.2")
 public final class ImpostorEspAddon extends Addon {
-    private static final String SUS_URL = "https://soulbond.on-top.wtf/Ao9I20SF_";
+    private static final String SUS_URL = "https://img.soulbond.cf/amogus.png";
     private static final Minecraft MC = Minecraft.getMinecraft();
     static ResourceLocation sus;
     static double susRatio;
