@@ -15,4 +15,4 @@ when the impostor is sus!
  - ADP for the entire fucking thing
  
  # Showcase
-soon
+https://img.soulbond.cf/210327_003001_OT9mhPl4.jpg lookie
