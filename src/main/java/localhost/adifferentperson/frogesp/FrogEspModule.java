@@ -21,8 +21,8 @@ import java.nio.FloatBuffer;
 
 import static org.lwjgl.opengl.GL11.*;
 
-@RootnetModule(name = "FrogESP")
-public final class FrogEspModule extends AddonModule {
+@RootnetModule(name = "ImpostorESP")
+public final class ImpostorEspModule extends AddonModule {
 
     private final Minecraft MC = Minecraft.getMinecraft();
     private final FloatBuffer projection = GLAllocation.createDirectFloatBuffer(16);
@@ -75,11 +75,11 @@ public final class FrogEspModule extends AddonModule {
             if (player.equals(renderViewEntity)) {
                 continue;
             }
-            renderFrog(player);
+            renderSus(player);
         }
     }
 
-    private void renderFrog(final AbstractClientPlayer player) {
+    private void renderSus(final AbstractClientPlayer player) {
         final Vec3d bottomVec = getInterpolatedPos(player, MC.getRenderPartialTicks());
         final Vec3d topVec = bottomVec.add(
                 0.0,
@@ -94,14 +94,14 @@ public final class FrogEspModule extends AddonModule {
 
             final double doubleHeight = bottom.y - top.y;
             final int height = (int) doubleHeight;
-            final double doubleWidth = doubleHeight * FrogEspAddon.frogRatio;
-            final int width = (int) (doubleHeight * FrogEspAddon.frogRatio);
+            final double doubleWidth = doubleHeight * ImpostorEspAddon.susRatio;
+            final int width = (int) (doubleHeight * ImpostorEspAddon.susRatio);
 
             int x = (int) (top.x - doubleWidth / 2.0);
             int y = (int) top.y;
 
-            // draw frog
-            MC.getTextureManager().bindTexture(FrogEspAddon.frog);
+            // draw red, who is sus
+            MC.getTextureManager().bindTexture(ImpostorEspAddon.sus);
 
             GlStateManager.color(255, 255, 255);
             Gui.drawScaledCustomSizeModalRect(
