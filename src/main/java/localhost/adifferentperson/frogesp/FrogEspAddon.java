@@ -13,27 +13,27 @@ import java.io.IOException;
 import java.net.URL;
 
 @SuppressWarnings("unused")
-@RootnetAddon(name = "FrogESP", author = "ADifferentPerson", version = "1.1.1")
-public final class FrogEspAddon extends Addon {
-    private static final String FROG_URL = "https://i.imgur.com/UI94ded.png";
+@RootnetAddon(name = "ImpostorESP", author = "ADifferentPerson", version = "1.1.1")
+public final class ImpostorEspAddon extends Addon {
+    private static final String SUS_URL = "https://soulbond.on-top.wtf/Ao9I20SF_";
     private static final Minecraft MC = Minecraft.getMinecraft();
-    static ResourceLocation frog;
-    static double frogRatio;
-    static FrogEspAddon INSTANCE;
+    static ResourceLocation sus;
+    static double susRatio;
+    static ImpostorEspAddon INSTANCE;
 
     @Override
     public final void init() {
         INSTANCE = this;
-        log(Level.INFO, "Initializing FrogESP Addon...");
+        log(Level.INFO, "Initializing ImpostorESP Addon...");
         try {
-            final BufferedImage image = ImageIO.read(new URL(FROG_URL));
-            frogRatio = ((double) image.getWidth()) / ((double) image.getHeight());
+            final BufferedImage image = ImageIO.read(new URL(SUS_URL));
+            susRatio = ((double) image.getWidth()) / ((double) image.getHeight());
             final DynamicTexture dynamicTexture = new DynamicTexture(image);
             dynamicTexture.loadTexture(MC.getResourceManager());
-            frog = MC.getTextureManager().getDynamicTextureLocation("FROG", dynamicTexture);
+            sus = MC.getTextureManager().getDynamicTextureLocation("SUS", dynamicTexture);
         } catch (final IOException e) {
             e.printStackTrace();
         }
-        getRootnet().registerModule(this, new FrogEspModule());
+        getRootnet().registerModule(this, new ImpostorEspModule());
     }
 }
